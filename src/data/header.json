@@ -2,49 +2,8 @@
   "header": {
     "menu": [
       {
-        "link": "hero",
-        "title": "Home",
-        "isDropdown": true,
-        "dropdownItem": [
-          {
-            "link": "/",
-            "title": "Version 01"
-          },
-          {
-            "link": "/v2",
-            "title": "Version 02"
-          },
-          {
-            "link": "/v3",
-            "title": "Version 03"
-          },
-          {
-            "link": "/v4",
-            "title": "Version 04"
-          },
-          {
-            "link": "/v5",
-            "title": "Version 05"
-          },
-          {
-            "link": "/v6",
-            "title": "Version 06"
-          }
-        ]
-      },
-      {
-        "link": "benefits",
-        "title": "Benefits",
-        "isDropdown": false
-      },
-      {
         "link": "chapters",
         "title": "Chapters",
-        "isDropdown": false
-      },
-      {
-        "link": "pricing",
-        "title": "Pricing",
         "isDropdown": false
       },
       {
@@ -53,8 +12,8 @@
         "isDropdown": false
       },
       {
-        "link": "achievements",
-        "title": "Achievements",
+        "link": "#",
+        "title": "LOGO",
         "isDropdown": false
       },
       {

@@ -1,7 +1,10 @@
 .hero {
   &__padding {
-    padding-top: 200px;
+    padding-top: 150px;
     padding-bottom: 100px;
+    @include respond(phone) {
+      padding-top: 100px;
+    }
   }
   &__content {
     z-index: 9;

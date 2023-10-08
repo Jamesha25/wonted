@@ -1,4 +1,4 @@
-import { default as React, useState } from "react";
+import { default as React, useState, useEffect } from "react";
 import { Navbar } from "react-bootstrap";
 import { GoChevronDown } from "react-icons/go";
 import { Link as PageLink } from "react-router-dom";
@@ -9,6 +9,7 @@ import { siteLogo } from "../../global";
 const Header = ({ header }) => {
   const [isActive, setActive] = useState(false);
   const [fix, setFix] = useState(false);
+  const [isMobileScreen, setIsMobileScreen]=useState(false);
   const handleToggle = () => {
     setActive(!isActive);
   };
@@ -20,16 +21,39 @@ const Header = ({ header }) => {
     }
   }
   window.addEventListener("scroll", setFixed);
+  
+  const handleResize = () => {
+    // Update window.innerWidth when the window is resized
+    if (window.innerWidth < 992) {
+      setIsMobileScreen(true); // Reset fix state when window width is greater than 992
+    }else{
+      setIsMobileScreen(false);
+    }
+  };
+  useEffect(() => {
+    if(window.innerWidth<992){
+      setIsMobileScreen(true)
+    }else{
+      setIsMobileScreen(false)
+    }
+    // Add event listeners when the component mounts
+    window.addEventListener("resize", handleResize);
+
+    // Clean up event listeners when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []); // Empty dependency array means this effect only runs once when the component mounts
 
   return (
     <header className={fix ? "header navbar_fixed" : "header"}>
       <div className="container">
         <div className="row">
           <Navbar bg="none" expand="lg">
-            <a className="navbar-brand" href="/">
+            {isMobileScreen && <a className="navbar-brand" href="/">
               {/* <!-- <h1 className="m-0">WONTED</h1> --> */}
               <img src={siteLogo.logo} alt={siteLogo.alt} />
-            </a>
+            </a>}
             <Navbar.Toggle aria-controls="navbarSupportedContent">
               <span></span>
               <span></span>
@@ -38,46 +62,21 @@ const Header = ({ header }) => {
               <span></span>
               <span></span>
             </Navbar.Toggle>
-            <Navbar.Collapse id="navbarSupportedContent">
-              <ul className="navbar-nav menu ms-lg-auto">
-                {header.menu?.map((data, i) =>
-                  data?.isDropdown === true ? (
-                    <li className="nav-item dropdown submenu" key={i}>
-                      <Link
-                        activeClass="active"
-                        className="nav-link scroll dropdown-toggle"
-                        to={`${data.link}`}
-                        spy={true}
-                        isDynamic={false}
-                        hashSpy={false}
-                        spyThrottle={500}
-                        smooth={true}
-                        duration={500}
-                        offset={-60}
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        {data.title}
-                        <span onClick={handleToggle} className="sub-menu-toggle">
-                          <GoChevronDown />
-                        </span>
-                      </Link>
-                      <ul
-                        className={
-                          isActive ? "dropdown-menu show" : "dropdown-menu"
-                        }
-                      >
-                        {data.dropdownItem.map((item, i) => (
-                          <li key={i} className="nav-item">
-                            <PageLink to={item.link} className="nav-link">
-                              {item.title}
-                            </PageLink>
-                          </li>
-                        ))}
-                      </ul>
+            <Navbar.Collapse id="navbarSupportedContent" className="justify-content-center">
+            <ul className="navbar-nav menu">
+              {header.menu?.map((data, i) => {
+                if (data?.title === "LOGO" && !isMobileScreen) {
+                  return (
+                    <li className="nav-item flex-sm-grow-1 me-3 ms-5" key={i} >
+                      <a className="navbar-brand" href="/">
+                        {/* <!-- <h1 className="m-0">WONTED</h1> --> */}
+                        <img src={siteLogo.logo} alt={siteLogo.alt} />
+                      </a>
                     </li>
-                  ) : (
-                    <li className="nav-item" key={i}>
+                  );
+                } else if(data.title!="LOGO"){
+                  return (
+                    <li className="nav-item flex-grow-1" key={i}>
                       <Link
                         activeClass="active"
                         className="benefits nav-link"
@@ -93,9 +92,10 @@ const Header = ({ header }) => {
                         {data.title}
                       </Link>
                     </li>
-                  )
-                )}
-              </ul>
+                  );
+                }
+              })}
+            </ul>
             </Navbar.Collapse>
           </Navbar>
         </div>

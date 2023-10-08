@@ -1,7 +1,7 @@
 import React from "react";
 import AchievementV2 from "../achievementv2";
 import Achievev2 from "../achievev2";
-import Author from "../author";
+import Authorv3 from "../authorv3";
 import ChapterPreviewV2 from "../chapter-preview-v2";
 import Chapterv2 from "../chapterv2";
 import Contact from "../contact";
@@ -18,16 +18,16 @@ const Version02 = ({header, footer}) => {
   return (
     <>
       <Header header={header} />
-      <Herov2 isBg="yes"/>
+      <Herov2 isBg=""/>
       <Achievev2 isBg=""/>
       <Chapterv2 isBg="yes" />
       <Ctav2 isBg=""/>
       <ChapterPreviewV2 isBg="" />
       <Pricing isBg="yes"/>
-      <Author isBg="" />
+      <Authorv3 isBg="yes"/>
       <AchievementV2 isBg="yes"/>
       <FunFacts isBg="" />
-      <Testimonial isBg="yes"/>
+      <Testimonial isBg=""/>
       <Contact isBg=""/>
       <Footer isBg="yes" menu={menu} />
     </>

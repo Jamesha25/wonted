@@ -1,5 +1,9 @@
 .header {
-  position: absolute;
+  position: fixed;
+  background: $color-light;
+  z-index: 100;
+  box-shadow: 0 2px 28px 0 $color-shadow;
+  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
   width: 100%;
   transition: border-radius 0.2s, width 350ms ease;
   &.navbar_fixed {
@@ -15,14 +19,15 @@
   }
   .navbar {
     border: 0px;
-    margin-top: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 28px;
     top: 0;
     left: 0;
     z-index: 100;
     transition: all 0.3s;
     transition: all 0.4s ease-in-out;
+    @media (max-width: 992px) {
+      padding: 10px 15px 10px 15px
+    }
     .navbar-brand {
       padding: 0px;
     }
