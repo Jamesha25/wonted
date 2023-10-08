@@ -1,25 +1,15 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, {useRef} from "react";
-import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper";
+import React from "react";
+import { Autoplay, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
-import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from "swiper/react";
 import testimonialData from "../data/testimonial.json";
-import "./testimonialCus.css";
 
 const Testimonial = ({ isBg }) => {
   const { testimonial } = testimonialData;
-  const swiperRef = useRef(null);
-  const changeSlide = (pos) => {
-    if (swiperRef.current) {
-      if(pos==="next")
-      swiperRef.current.swiper.slideNext();
-      else
-      swiperRef.current.swiper.slidePrev()
-    }
-  };
+
   return (
     // <!-- ========== Testimonial section start ========== -->
     <section
@@ -40,35 +30,24 @@ const Testimonial = ({ isBg }) => {
         </div>
         <div className="row testi-row">
           <div className="col-12">
-            <Swiper ref={swiperRef}
-              modules={[Pagination, Autoplay, Navigation]}
+            <Swiper
+              modules={[Pagination, Autoplay]}
               pagination={{ clickable: true }}
+              autoplay
               breakpoints={{
                 768: {
-                  slidesPerView: 1,
-                  // spaceBetween: 20,
+                  slidesPerView: 2,
+                  spaceBetween: 20,
                 },
                 1024: {
-                  slidesPerView: 1,
-                  // spaceBetween: 20,
+                  slidesPerView: 3,
+                  spaceBetween: 20,
                 },
               }}
             >
               {testimonial.testimonialItem?.map((data) => (
                 <SwiperSlide key={data.id}>
-                  <div className="cus-swiper-container">
-                    <img src={data.image} alt={data.title} />
-                    <div className="content-container">
-                      <div onClick={()=>changeSlide("prev")} className="fs-1">&lt;</div>
-                      <div className="content">
-                        <h4>{data.name}</h4>
-                        <p>{data.title}</p>
-                        <p>{data.description}</p>
-                      </div>
-                      <div onClick={()=>changeSlide("next")} className="fs-1">&gt;</div>
-                    </div>
-                  </div>
-                  {/* <div className="swiper-slide p-5px-lr">
+                  <div className="swiper-slide p-5px-lr">
                     <div className="testi-card card h-100 translateEffect1">
                       <div className="card-body p-4">
                         <div className="testi-card__quotation">
@@ -86,7 +65,7 @@ const Testimonial = ({ isBg }) => {
                         </div>
                       </div>
                     </div>
-                  </div> */}
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>

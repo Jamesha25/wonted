@@ -13,7 +13,7 @@ import Footer from "../global/footer";
 import Header from "../global/header";
 import Hero from "../hero";
 import Pricing from "../pricing";
-import Testimonial from "../testimonial";
+import Testimonial from "../charactersCus";
 
 const Version01 = ({header, footer}) => {
   const {menu} = footer;

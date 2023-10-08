@@ -5,7 +5,7 @@ import Booksv2 from "../booksv2";
 import Ctav5 from "../ctav5";
 import FunFacts from "../fun-facts";
 import Herov4 from "../herov4";
-import Testimonial from "../testimonial";
+import Testimonial from "../charactersCus";
 import Eventv2 from "../eventv2";
 import Booksv3 from "../booksv3";
 import Blog from "../blog";

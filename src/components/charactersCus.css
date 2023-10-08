@@ -1,6 +1,7 @@
 .cus-swiper-container{
     display: flex;
-    justify-content: space-around;
+    gap: 80px;
+    justify-content: center;
 }
 .cus-swiper-container img{
     width: 360px;
@@ -9,7 +10,7 @@
 .cus-swiper-container .content-container{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 35px;
     justify-content: center;
 }
 .cus-swiper-container .content-container .content{

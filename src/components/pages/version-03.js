@@ -11,7 +11,7 @@ import Footer from "../global/footer";
 import Header from "../global/header";
 import Herov3 from "../herov3";
 import Pricing from "../pricing";
-import Testimonial from "../testimonial";
+import Testimonial from "../charactersCus";
 
 const Version03 = ({header, footer}) => {
   const {menu} = footer;

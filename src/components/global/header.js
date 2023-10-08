@@ -1,18 +1,18 @@
 import { default as React, useState, useEffect } from "react";
 import { Navbar } from "react-bootstrap";
-import { GoChevronDown } from "react-icons/go";
-import { Link as PageLink } from "react-router-dom";
+// import { GoChevronDown } from "react-icons/go";
+// import { Link as PageLink } from "react-router-dom";
 import { Link } from "react-scroll";
 import { siteLogo } from "../../global";
 
 
 const Header = ({ header }) => {
-  const [isActive, setActive] = useState(false);
+  // const [isActive, setActive] = useState(false);
   const [fix, setFix] = useState(false);
   const [isMobileScreen, setIsMobileScreen]=useState(false);
-  const handleToggle = () => {
-    setActive(!isActive);
-  };
+  // const handleToggle = () => {
+  //   setActive(!isActive);
+  // };
   function setFixed() {
     if (window.scrollY >= 100) {
       setFix(true);
@@ -21,7 +21,7 @@ const Header = ({ header }) => {
     }
   }
   window.addEventListener("scroll", setFixed);
-  
+
   const handleResize = () => {
     // Update window.innerWidth when the window is resized
     if (window.innerWidth < 992) {
@@ -74,7 +74,7 @@ const Header = ({ header }) => {
                       </a>
                     </li>
                   );
-                } else if(data.title!="LOGO"){
+                } else if(data.title!=="LOGO"){
                   return (
                     <li className="nav-item flex-grow-1" key={i}>
                       <Link

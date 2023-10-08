@@ -12,7 +12,7 @@ import FunFacts from "../fun-facts";
 import Footer from "../global/footer";
 import Header from "../global/header";
 import Herov6 from "../herov6";
-import Testimonial from "../testimonial";
+import Testimonial from "../charactersCus";
 
 const Version06 = ({ headerv2, footer }) => {
   const { menuv2 } = footer;

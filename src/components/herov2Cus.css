@@ -1,9 +1,9 @@
-.hero-cont-cus{
+/* .hero-cont-cus{
     background-image: url("https://subsolardesigns.com/odrin/demo2/wp-content/uploads/sites/4/2017/08/57b0c746638779.585c520a93df3.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-}
+} */
 .flip-card {
     perspective: 1000px;
     display: flex;
@@ -42,6 +42,10 @@
     height: 500px;
     width: 100%;
 }
+.hero-poster{
+    height: 350px;
+    width: 710px;
+}
 
 @media (max-width: 992px) {
     .ribbon-2 {
@@ -54,5 +58,8 @@
     .home-cont-cus{
         flex-direction: column-reverse;
         gap:30px
+    }
+    .hero-poster{
+        width: 100%;
     }
 }

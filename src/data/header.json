@@ -2,13 +2,13 @@
   "header": {
     "menu": [
       {
-        "link": "chapters",
-        "title": "Chapters",
+        "link": "#",
+        "title": "Buy Book",
         "isDropdown": false
       },
       {
-        "link": "author",
-        "title": "Author",
+        "link": "#",
+        "title": "Join The Community",
         "isDropdown": false
       },
       {
@@ -17,13 +17,13 @@
         "isDropdown": false
       },
       {
-        "link": "reviews",
-        "title": "Reviews",
+        "link": "#",
+        "title": "Talk To Author",
         "isDropdown": false
       },
       {
-        "link": "contact",
-        "title": "Contact",
+        "link": "#",
+        "title": "Login",
         "isDropdown": false
       }
     ]

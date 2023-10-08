@@ -41,7 +41,8 @@ const Herov2 = ({ isBg }) => {
       <div className="circle x3"></div>
       <div className="circle x4"></div>
       <div className="circle x5"></div>
-      <div className="container">
+      <div className="container position-relative">
+        <img className="position-absolute end-0 hero-poster" src="https://subsolardesigns.com/odrin/demo2/wp-content/uploads/sites/4/2017/08/57b0c746638779.585c520a93df3.jpg" alt=""/>
         <div className="row align-items-center justify-content-between home-cont-cus">
           <div className="col-md-7 col-lg-6 m-0px-b md-m-40px-b">
             <div className="hero__content position-relative">
